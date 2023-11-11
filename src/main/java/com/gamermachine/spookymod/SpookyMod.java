@@ -93,15 +93,15 @@ public class SpookyMod
 	
     
 	public static final RegistryObject<EntityType<BulletEntity>> BULLET = 
-			ENTITIES.register("bullet", () -> {EntityType.Builder.<BulletEntity>of(BulletEntity::new, MobCategory.MISC)
+			ENTITIES.register("bullet", () -> EntityType.Builder.<BulletEntity>of(BulletEntity::new, MobCategory.MISC)
 				.sized(0.4F, 0.7F)
 				.clientTrackingRange(10)
-				.build("bullet");});
+				.build("bullet"));
 	
-	public static final RegistryObject<EntityType<Arrow>> RANDOMP = ENTITIES.register("randomp", () -> {EntityType.Builder.<Arrow>of(Arrow::new, MobCategory.MISC)
+	public static final RegistryObject<EntityType<Arrow>> RANDOMP = ENTITIES.register("randomp", () -> EntityType.Builder.<Arrow>of(Arrow::new, MobCategory.MISC)
 		.sized(0.4F, 0.7F)
 		.clientTrackingRange(10)
-		.build("randomp");});
+		.build("randomp"));
     
     public SpookyMod()
     {
