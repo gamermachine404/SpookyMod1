@@ -81,23 +81,27 @@ public class SpookyMod
                 output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
             }).build());
     
-    static Supplier<EntityType<BulletEntity>> blankMind = () -> {EntityType.Builder.<BulletEntity>of(BulletEntity::new, MobCategory.MISC)
+ /*   static Supplier<EntityType<BulletEntity>> blankMind = () -> {EntityType.Builder.<BulletEntity>of(BulletEntity::new, MobCategory.MISC)
 		.sized(0.4F, 0.7F)
 		.clientTrackingRange(10)
-		.build("bullet");};
+		.build("bullet");}; */
 		
-	    static Supplier<EntityType<Arrow>> blankMind2 = () -> {EntityType.Builder.<Arrow>of(Arrow::new, MobCategory.MISC)
+	/*    static Supplier<EntityType<Arrow>> blankMind2 = () -> {EntityType.Builder.<Arrow>of(Arrow::new, MobCategory.MISC)
 			.sized(0.4F, 0.7F)
 			.clientTrackingRange(10)
-			.build("randomp");};
+			.build("randomp");}; */
 	
     
 	public static final RegistryObject<EntityType<BulletEntity>> BULLET = 
-			ENTITIES.register("bullet", blankMind);
+			ENTITIES.register("bullet", () -> {EntityType.Builder.<BulletEntity>of(BulletEntity::new, MobCategory.MISC)
+				.sized(0.4F, 0.7F)
+				.clientTrackingRange(10)
+				.build("bullet");});
 	
-	public static final RegistryObject<EntityType<Arrow>> RANDOMP = ENTITIES.register("randomp", blankMind2);
-    
-
+	public static final RegistryObject<EntityType<Arrow>> RANDOMP = ENTITIES.register("randomp", () -> {EntityType.Builder.<Arrow>of(Arrow::new, MobCategory.MISC)
+		.sized(0.4F, 0.7F)
+		.clientTrackingRange(10)
+		.build("randomp");});
     
     public SpookyMod()
     {
